@@ -1,4 +1,4 @@
-// pages/cate/cate.js
+// pages/cate.js
 Page({
 
     /**
