@@ -2,9 +2,10 @@
 Page({
     data: {
         num: 1,
-        userInfo: {}
-    },
-
+        userInfo: {},
+       // list: [1, 2, 3]
+        list: [{id:1,name: 'tom'}]
+    }, 
     //更新num
     updateNum(){
         //获取数据
@@ -58,5 +59,29 @@ Page({
         // })
         delete this.data.userInfo.age
         console.log(this.data.userInfo)
+    },
+    //更新list
+    updateList(){
+        //新增数组元素
+        //直接使用puhs方法，可以直接更新data，但是不能更新页面中的数据
+        //this.data.list.push(4)
+        // //修改数组元素
+        // this.data.list.push(4)
+        // this.setData({
+        //     list: this.data.list
+        // })
+        // const newList = this.data.list.concat(4)
+        // this.setData({
+        //     list: newList
+        // }) 
+        // const newList = [...this.data.list, 4]
+        // this.setData({
+        //     list:newList
+        // })
+        //修改数组元素
+        this.setData({
+            // 'list[1]':6
+            'list[0].name': 'jerry'
+        })
     }
 })
