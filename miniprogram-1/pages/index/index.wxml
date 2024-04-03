@@ -151,3 +151,20 @@
 
 <!-- 以下是知识点讲解  -->
 <view class="bg-image"></view>
+<!-- 第一种绑定事件的方式：bind:事件名-->
+<button type="primary" size="mini" bind:tap="handler">绑定事件</button>
+
+<!-- 第二种绑定事件的方式：bind:事件名-->
+<button type="warn" size="mini" bindtap="handler">绑定事件</button>
+
+<!-- 在小程序中，input输入框默认没有边框，需要自己添加样式 -->
+<input type="text" bindinput="getInputVal"/>
+
+<view class = "line"> </view>
+
+<view class = "catch" bind:tap="parentHandler">
+    <button catch:tap="btnHandler"> 按钮 </button>
+</view>
+
+<view>{{school}}</view>
+<view>{{obj.name}}</view>

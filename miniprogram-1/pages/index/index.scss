@@ -166,6 +166,15 @@ page {
     //可以使用网络图片来替换本地路径
     // background-image: url(http://8.131.91.46:6677/bgimage.png);
     //也可以将图片转换成base64的格式，然后进行使用，但是不推荐，因为太长了
-    
+}
 
+input {
+    border: 1px solid red;
+}
+
+.catch{
+    display: flex;
+    height: 300rpx;
+    background-color: skyblue;
+    align-items: center;
 }
