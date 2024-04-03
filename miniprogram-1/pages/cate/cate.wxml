@@ -1,6 +1,9 @@
-<!--pages/cate.wxml-->
-<view bindtap="parentHandler" data-parent-id="1" data-parentName="tom">
-    <!-- 如果需要进行事件传参，需要在组件上通过data-的方式传递数据 -->
-    <!-- <button bindtap="btnHandler" data-id="1" data-name="tom">按钮</button> -->
-    <button data-id="1" data-name="tom">按钮</button>
+<view>
+    {{ num }}
 </view>
+<button bindtap="updateNum"> 更新 num</button>
+<view class = "line"></view>
+
+<view> {{ userInfo.name }} </view>
+<view> {{userInfo.age}} </view>
+<button type="warn" bindtap="updateUserInfo">修改对象类型数据</button>
