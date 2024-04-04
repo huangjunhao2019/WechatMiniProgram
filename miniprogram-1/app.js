@@ -1,25 +1,33 @@
-// app.js
 App({
-    //onLaunch是小程序的钩子函数，这个钩子函数在冷启动时，肯定会执行到
-    //当小程序冷启动时，微信后台会自动请求版本的信息，如果有新版本，会立即进行下载
-    //使用wxwx.getUpdateManager()
-    onLaunch(){
-        const updateManager = wx.getUpdateManager()
 
-        //当下载完成新版本以后，会触发 onUpdateReady回调函数
-        updateManager.onUpdateReady(function(){
-            //在回调函数中给用户提示，
-            wx.showModal({
-              title: '更新提示',
-              content: '新版本已经准备好，是否重启应用？',
-              success(res){
-                  if(res.confirm){
-                    //强制当前小程序使用新版本并且会重启当前小程序
-                    updateManager.applyUpdate()
-                  }
-              }
-            })
-        })
-    }
+  /**
+   * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
+   */
+  onLaunch: function () {
+      //当进行冷启动时，才会触发onLaunch钩子函数
+      //如果是热启动，不会触发 onLaunch钩子函数，会触发onShow钩子函数
+      //因此，onLaunch全局只触发一次
+    console.log('onLaunch  小程序初始化完成时')
+  },
 
+  /**
+   * 当小程序启动，或从后台进入前台显示，会触发 onShow
+   */
+  onShow: function (options) {
+    console.log('onShow 小程序从后台进入前台显示')
+  },
+
+  /**
+   * 当小程序从前台进入后台，会触发 onHide
+   */
+  onHide: function () {
+    console.log('onHide 从前台进入后台时显示')
+  },
+
+  /**
+   * 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息
+   */
+  onError: function (msg) {
+    
+  }
 })

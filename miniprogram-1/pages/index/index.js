@@ -1,14 +1,65 @@
-// index.js
 Page({
 
-   
-    //在小程序页面中所需要使用的数据均来自data对象
-    data:{
-        id:1,
-        isChecked: false,
-        school: "尚硅谷",
-        obj: {
-            name: "tom"
-        }
-    }
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    console.log('onLoad 页面创建的时候执行')
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    console.log('onShow 页面初次渲染完成，代表页面已经准备妥当，可以和视图层进行交互')
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    console.log('onShow 页面在前台展示的时候')
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+    console.log('onHide 页面隐藏')
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    console.log('onUnload 页面卸载、销毁')
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    
+  }
 })
