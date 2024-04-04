@@ -1,9 +1,7 @@
-<!--pages/cart/cart.wxml-->
-<!-- 需求：绘制一个盒子，让盒子的宽度占据屏幕的一半 -->
-<!-- view 是小程序提供的组件，是容器组件，类似于div，也是一个块级元素，占据一行 -->
-<!-- 如果想实现需求，不能使用px，px是固定单位，需要使用小程序提供的rpx -->
-<!-- 微信小程序规定，不管是什么型号的手机，屏幕的宽度都是750rpx -->
-<view bindtap="parentHandler" makr:parentid="1" make:name="tome">
-    <!-- 如果需要使用mark进行事件传参，需要使用makr:自定义属性的方式进行参数传递-->
-    <button  mark:id="1" mark:name="tom"> 按钮 </button>
-</view>
+
+<!-- 单向绑定：数据能够影响页面，但是页面更新不会影响数据 -->
+<!-- <input type="text" value="{{ value }}"/> -->
+
+<!-- <input type="text" model:value="{{value}}" /> -->
+
+<checkbox model:checked="{{ isCheked }}" /> 是否同意该协议 

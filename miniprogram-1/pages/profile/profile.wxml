@@ -1,2 +1,21 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+
+
+<view wx:for="{{ numList }}"> {{item}}-{{index}}</view>
+
+<view wx:for="{{ obj }}"> {{item}}-{{index}}</view>
+
+<view class = "line"> </view>
+
+<!-- 数组 -->
+<view wx:for="{{ fruitList }}" wx:key="id" wx:for-item="fruitItem" wx:for-index="i">
+    {{fruitItem.name}}
+</view>
+<!-- 对象 -->
+<view wx:for="{{ obj }}" wx:key="index" wx:for-item="value" wx:for-index="key">
+    {{key}}-{{value}}
+</view>
+
+<view wx:for="{{fruitList}}" wx:key="id" wx:for-item="fruitItem" wx:for-index="i">
+    <view> 名字：{{ fruitItem.name }}</view>
+    <view> 价格：{{ fruitItem.price}}</view>
+</view>

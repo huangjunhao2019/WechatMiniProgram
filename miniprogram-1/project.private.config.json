@@ -5,5 +5,25 @@
         "compileHotReLoad": true,
         "urlCheck": true
     },
-    "libVersion": "3.2.5"
+    "libVersion": "3.2.5",
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "模拟强制更新",
+                    "pathName": "pages/market/market",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "促销页面",
+                    "pathName": "pages/market/market",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
+    }
 }

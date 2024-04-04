@@ -1,0 +1,7 @@
+<!-- wx:if 属性组 -->
+<!-- wx:if wx:elif wx:else-->
+
+<view> num 等于 {{num}}</view>
+
+<button type="warn" bindtap="updateNum">更新 num</button>
+
