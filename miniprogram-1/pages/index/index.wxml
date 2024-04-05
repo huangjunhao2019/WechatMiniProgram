@@ -1,6 +1,2 @@
-<!-- redirect: 销毁当前页面，跳转到下一个页面 -->
-<navigator url="/pages/list/list" open-type="redirect"> 跳转到列表页面 </navigator>
-
-<!-- navigate: 保留当前页面，跳转到下一个页面 -->
-<navigator url="/pages/list/list" open-type="navigate"> 跳转到列表页面 </navigator>
-
+<!-- <button  type="warn" bindtap="getData"> 获取数据 </button> -->
+<button type="primary" bindtap="delHandler"> 删除商品 </button>

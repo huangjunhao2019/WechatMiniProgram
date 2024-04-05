@@ -1,7 +1,1 @@
-
-<!-- 单向绑定：数据能够影响页面，但是页面更新不会影响数据 -->
-<!-- <input type="text" value="{{ value }}"/> -->
-
-<!-- <input type="text" model:value="{{value}}" /> -->
-
-<checkbox model:checked="{{ isCheked }}" /> 是否同意该协议 
+<navigator url="/pages/list/list">进入List页面</navigator>

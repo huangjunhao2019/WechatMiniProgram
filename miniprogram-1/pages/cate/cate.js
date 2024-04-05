@@ -1,87 +1,92 @@
-// pages/cate.js
 Page({
-    data: {
-        num: 1,
-        userInfo: {},
-       // list: [1, 2, 3]
-        list: [{id:1,name: 'tom'}]
-    }, 
-    //更新num
-    updateNum(){
-        //获取数据
-        console.log(this.data.num)
 
-        //通过赋值的方式直接修改数据
-        //能够修改数据，但是不能改变页面上的数据
-        // this.data.num += 1
-        // console.log(this.data.num)
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    
+  },
+  //将数据存储到本地
+  setStorage() {
+      //第一个参数：本地存储中指定的key
+      wx.setStorageSync('num',1)
+      //在小程序中
+      //如果存储的是对象类型数据，不需要使用JSON.stringfy 和 JSON.parse 进行转换
+      //直接进行存储和获取即可
+      wx.setStorageSync('obj', {name: 'tom', age:10})
+  },
+  //获取本地存储的数据
+  getStorage() {
+      //从本地存储的数据中获取指定key的数据、内容
+      const num = wx.getStorageSync('num')
+      
+      const obj = wx.getStorageSync('obj')
 
-        //this.setData 两个作用
-        //1. 更新数据
-        //2. 驱动视图（页面）更新
-        this.setData({
-            //key: 需要更新的数据
-            //value：最新的值
-            num: this.data.num + 1
-        })
-    },
-    //更新userInfo
-    updateUserInfo(){
-        // //新增单个/多个属性
-        // this.setData({
-        //     //如果给对象新增属性，可以将key协程数据路径的方式 a.b.c
-        //     'userInfo.name':'tom',
-        //     'userInfo.age':10
-        // })
-        // //修改单个/多个属性
-        // this.setData({
-        //     'userInfo.name':'jerry',
-        //     'userInfo.age': 18
-        // })
-        //目前进行新增和修改都是使用数据路径，如果新增和修改的数据量比较小，还可以
-        //如果修改的数据很多，每次都写数据路径，就较为困难
-        //可以使用ES6提供的展开运算符和Object.assign()
-        //使用ES6提供的展开运算符
-        //通过展开运算符，能够将对象中的属性复制给另一个对象
-        //后面的属性会覆盖前面的属性
-        // const userInfo = {
-        //     ...this.data.userInfo,
-        //     name:'jerry',
-        //     age:18
-        // }
-        // this.setData({
-        //     userInfo: userInfo
-        // })
-        //Object.assign()将多个对象合并为一个对象
-        // const userInfo = Object.assign(this.data.userInfo, {name: 'jerry'}, {age: 18})
-        // this.setData({
-        //     userInfo: userInfo
-        // })
-        delete this.data.userInfo.age
-        console.log(this.data.userInfo)
-    },
-    //更新list
-    updateList(){
-        //新增数组元素
-        //直接使用puhs方法，可以直接更新data，但是不能更新页面中的数据
-        //this.data.list.push(4)
-        // //修改数组元素
-        // this.data.list.push(4)
-        // this.setData({
-        //     list: this.data.list
-        // })
-        // const newList = this.data.list.concat(4)
-        // this.setData({
-        //     list: newList
-        // }) 
-        // const newList = [...this.data.list, 4]
-        // this.setData({
-        //     list:newList
-        // })
-        //修改数组元素
-        this.setData({
-            // 'list[1]':6
-            'list[0].name': 'jerry'
-        })
-    }
+      console.log(num)
+      console.log(obj)
+  },
+  //删除本地存储的数据
+  removeStorage() {
+      //从本地移除指定key的数据、内容
+      wx.removeStorageSync('num')
+  },
+  //清空本地存储的全部数据
+  clearStorage() {
+      wx.clearStorageSync()
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    console.log('cate onShow')
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    console.log('cate onUnload')
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    
+  }
 })
