@@ -13,26 +13,43 @@ Page({
       //在小程序中
       //如果存储的是对象类型数据，不需要使用JSON.stringfy 和 JSON.parse 进行转换
       //直接进行存储和获取即可
-      wx.setStorageSync('obj', {name: 'tom', age:10})
+    //   wx.setStorageSync('obj', {name: 'tom', age:10})
+    //异步API
+    wx.setStorage({
+        key: 'num',
+        data: 1
+    })
+    wx.setStorage({
+        key: 'obj',
+        data: { name: 'jerry', age: 18 }
+    })
   },
   //获取本地存储的数据
-  getStorage() {
-      //从本地存储的数据中获取指定key的数据、内容
-      const num = wx.getStorageSync('num')
+  async getStorage() {
+    //   //从本地存储的数据中获取指定key的数据、内容
+    //   const num = wx.getStorageSync('num')
       
-      const obj = wx.getStorageSync('obj')
+    //   const obj = wx.getStorageSync('obj')
 
-      console.log(num)
-      console.log(obj)
+    //   console.log(num)
+    //   console.log(obj)
+    const {data} = await wx.getStorage({
+        key: 'obj'
+    })
+    console.log(data)
   },
   //删除本地存储的数据
   removeStorage() {
-      //从本地移除指定key的数据、内容
-      wx.removeStorageSync('num')
+    //   //从本地移除指定key的数据、内容
+    //   wx.removeStorageSync('num')
+    wx.removeStorage({
+        key: 'num'
+    })
   },
   //清空本地存储的全部数据
   clearStorage() {
-      wx.clearStorageSync()
+    //   wx.clearStorageSync()
+    wx.clearStorage()
   },
   /**
    * 生命周期函数--监听页面加载
