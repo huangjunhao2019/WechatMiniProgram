@@ -29,5 +29,15 @@ Page({
     //更新 num
     updateNum(){
         
+    },
+    //监听用户上拉加载
+    onPullDownRefresh(){
+        this.setData({
+            numList: [1, 2, 3]
+        })
+        if (this.data.numList.length===3){
+            wx.stopPullDownRefresh()
+        }
     }
+
 })
