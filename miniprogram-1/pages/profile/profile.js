@@ -1,65 +1,45 @@
+// pages/market/market.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-      
+       numList: [1,2,3]
     },
-  
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-      
+    
+    //监听用户上拉加载
+    onReachBottom(){
+        //产品需求
+        //当用户上拉，需要对数字进行累加
+        //获取数组最后一项
+        wx.showLoading({
+            title:'数据加载中...'
+        })
+        setTimeout(()=>{
+            const lastNum = this.data.numList[this.data.numList.length-1]
+            //定义需要追加的元素
+            const newArr = [ lastNum + 1, lastNum + 2, lastNum + 3 ]
+            this.setData({
+                numList: [...this.data.numList, ...newArr]
+            })
+            wx.hideLoading()
+        },1500)
     },
-  
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-      
+    //更新 num
+    updateNum(){
+        this.setData({
+            num: this.data.num+1
+        })
     },
-  
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-      console.log('profile onShow')
-    },
-  
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-      
-    },
-  
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-      console.log('profile onUnload')
-    },
-  
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-      
-    },
-  
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-      
-    },
-  
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-      
+    //监听用户上拉加载
+    onPullDownRefresh(){
+        this.setData({
+            numList: [1, 2, 3]
+        })
+        if (this.data.numList.length===3){
+            wx.stopPullDownRefresh()
+        }
     }
-  })
+
+})

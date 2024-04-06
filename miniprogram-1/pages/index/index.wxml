@@ -1,2 +1,5 @@
-<!-- <button  type="warn" bindtap="getData"> 获取数据 </button> -->
-<button type="primary" bindtap="delHandler"> 删除商品 </button>
+<custom-checkbox label="我已阅读并同意用户协议和隐私协议" position="right"/>
+
+<view class = "line"></view>
+
+<custom-checkbox label="匿名提交" position="left" />

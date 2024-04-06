@@ -28,7 +28,9 @@ Page({
     },
     //更新 num
     updateNum(){
-        
+        this.setData({
+            num: this.data.num+1
+        })
     },
     //监听用户上拉加载
     onPullDownRefresh(){

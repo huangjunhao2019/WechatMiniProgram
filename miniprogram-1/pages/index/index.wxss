@@ -1,0 +1,4 @@
+page{
+    padding: 50rpx;
+    box-sizing: border-box;
+}
